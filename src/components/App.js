@@ -1,15 +1,17 @@
 import React, { useReducer } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import reducers from '../reducers';
 import EventForm from './EventForm';
 import Events from './Events';
 import AppContext from '../contexts/AppContext';
-
+import reducer from '../reducers'
 
 console.log(AppContext);
-const App = (props) => {
-  const [state, dispatch] = useReducer(reducers, []);
+const App = () => {
+  const initialState = {
+    events: []
+  }
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <AppContext.Provider value={{state,dispatch}}>
