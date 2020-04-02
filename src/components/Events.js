@@ -1,11 +1,14 @@
 import Event from './Event';
-import React from 'react';
+import React,{useContext} from 'react';
 
+import AppContext from '../contexts/AppContext';
+import App from './App';
 
 const Events = ({ state, dispatch }) => {
-
+  const value = useContext(AppContext)
   return (
     <>
+      <div>{value}</div>
       <h4>イベント一覧</h4>
       <table className="table table-hover">
         <thead>
